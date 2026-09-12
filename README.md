@@ -7,7 +7,7 @@
 - 16 个电台，按英国 / 美国 / 欧洲（国家细分）展示。
 - 14 个已配置直播源；France Musique 和 RAI Radio 3 在 2026-09-12 核验时无法取得可验证的直播直链，明确标注“暂时缺少直播源”。
 - 单电台播放、切换停止上一台、常驻播放条、搜索与地区筛选、音量、键盘操作、移动端响应式。
-- Safari 使用原生 HLS，其余支持 MSE 的浏览器使用 hls.js；MP3/AAC 使用 audio。
+- 支持 MSE 的浏览器优先使用 hls.js，其余支持原生 HLS 的 Safari 等浏览器使用原生播放；MP3/AAC 使用 audio。
 - 连接/缓冲超时和播放错误可重试，不会阻塞页面。
 - **Cloudflare 尚未部署**：执行环境没有继承 `CLOUDFLARE_API_TOKEN`，Wrangler 返回 `You are not authenticated. Please run wrangler login.`；没有创建 Pages 项目、DNS 或自定义域名绑定。
 

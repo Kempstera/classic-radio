@@ -4,7 +4,7 @@
 
 |电台|结果|
 |---|---|
-|BBC Radio 3|HTTP 200；有效 EXT M3U / EXTINF 清单；CORS *|
+|BBC Radio 3|HTTP 200；有效 EXT M3U / EXTINF 清单；音频 TS 分片 HTTP 200；CORS *|
 |Classic FM UK|HTTP 200；audio/aac；从 Global Player 公开免费配置提取|
 |WQXR|HTTP 200；audio/mpeg；浏览器实际进入“正在直播”状态|
 |WCRB|HTTP 200；audio/aac；官网播放器公开配置|
@@ -13,7 +13,7 @@
 |MPR Classical|HTTP 200；audio/aac；cms 本地电台流|
 |All Classical Radio|HTTP 200；audio/mpeg；官方直链|
 |WWFM|HTTP 200；audio/mpeg；官方直链|
-|Radio Clásica|HTTP 200；有效 EXT M3U / EXTINF 清单；CORS *|
+|Radio Clásica|HTTP 200；有效 EXT M3U / EXTINF 清单；音频 TS 分片 HTTP 200；CORS *|
 |France Musique|官网与候选直播源连接超时；配置 null|
 |BR-KLASSIK|HTTP 200；audio/mpeg；官方 256 kbps 入口|
 |Klassik Radio|HTTP 200；audio/mpeg；电台自有域名|
@@ -33,7 +33,7 @@
 
 ## 应用验证
 
-- 9 项播放器状态测试通过。
+- 10 项播放器状态测试通过。
 - 16 个唯一电台 ID，14 个 HTTPS 直播源，2 个明确缺源。
 - 页面、模块和本地资源语法/引用检查通过。
 - 浏览器测试：地区筛选、搜索无结果、重置、播放条在筛选后保持当前电台、WQXR 实际播放、暂停。
@@ -50,3 +50,5 @@ You are not authenticated. Please run wrangler login.
 ```
 
 Wrangler 最新 CLI（当日解析为 4.131.1）的 `pages project create --help` 和 `pages deploy --help` 已检查，具体命令与官方 Direct Upload 文档一致。部署脚本缺令牌时立即中止；因为缺少凭据，Cloudflare 写入流程尚未执行或实测。
+
+浏览器 HLS 试听曾触发超时友好提示；命令行清单和实际分片均 HTTP 200。已改为支持 MSE 时优先 hls.js；持续播放仍受浏览器和网络条件影响。

@@ -21,3 +21,5 @@ const{p}=setup({getHls:()=>FakeHls});p.play({...a,type:'hls'});const old=p.hls;p
 test('unavailable HLS library does not crash MP3 playback',()=>{const{p}=setup({getHls:()=>undefined});p.play({...a,type:'hls'});assert.equal(p.state,'error');p.play(b);assert.equal(p.state,'loading');p.setVolume(.3);assert.equal(p.audio.volume,.3);p.pause();});
 
 test('repeated stalled events cannot extend the buffering deadline forever',async()=>{const{p,audios}=setup({timeout:12});p.play(a);const repeat=setInterval(()=>audios[0].dispatchEvent(new Event('stalled')),3);await new Promise(r=>setTimeout(r,35));clearInterval(repeat);assert.equal(p.state,'error');});
+
+test('native HLS is used when MSE HLS is unavailable',()=>{const p=new RadioPlayer({getHls:()=>undefined,createAudio:()=>{const a=new FakeAudio();a.canPlayType=()=> 'maybe';return a;}});p.play({...a,type:'hls'});assert.equal(p.audio.src,a.stream);assert.equal(p.audio.played,true);p.pause();});

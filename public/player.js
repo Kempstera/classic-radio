@@ -38,9 +38,12 @@ export class RadioPlayer {
     audio.addEventListener('pause',()=>{if(current()&&this.state==='playing')this.pause();});
     this.emit('loading','正在连接音乐现场…');armTimeout();
     const isHls=station.type==='hls'||/\.m3u8(?:[?#]|$)/i.test(station.stream);
-    if(!isHls||audio.canPlayType('application/vnd.apple.mpegurl')){audio.src=station.stream;start();return;}
+    if(!isHls){audio.src=station.stream;start();return;}
     const Hls=this.getHls();
-    if(!Hls?.isSupported()){fail();return;}
+    if(!Hls?.isSupported()){
+      if(audio.canPlayType('application/vnd.apple.mpegurl')){audio.src=station.stream;start();return;}
+      fail();return;
+    }
     try{
       this.hls=new Hls({enableWorker:true,maxBufferLength:20,backBufferLength:15});
       this.hls.on(Hls.Events.MANIFEST_PARSED,start);
