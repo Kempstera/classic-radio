@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>颂 · Classic Radio | 世界古典音乐电台</title>
+<meta name="description" content="从伦敦到维也纳，聆听世界古典音乐电台。精选英美与欧洲直播，轻触即播。">
+<meta name="theme-color" content="#6e2838">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%236e2838'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='44' fill='%23f6f0e4'%3E♫%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/hls.js@1.6.13/dist/hls.min.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#collection">跳至电台列表</a>
+<div class="page">
+<header class="masthead"><a class="brand" href="./"><span class="seal">颂</span><span>CLASSIC RADIO<small>世界古典音乐电台</small></span></a><a class="about-link" href="#listening-notes">聆听须知 <span>↗</span></a></header>
+<main>
+<section class="hero"><div class="eyebrow">A LITTLE STILLNESS, A WORLD OF MUSIC</div><h1>让世界慢下来，<br>听一曲<span>古典。</span></h1><div class="hero-bottom"><p>从伦敦的清晨，到维也纳的夜晚。<br>让远方的音乐厅，成为此刻的陪伴。</p><a class="browse-link" href="#collection">探索电台 <span>↓</span></a></div><div class="hero-ornament" aria-hidden="true">𝄞</div></section>
+<section id="collection" class="collection" aria-labelledby="collection-title">
+<div class="section-top"><div><div class="eyebrow">THE RADIO COLLECTION</div><h2 id="collection-title">穿越时区的乐章</h2></div><p id="station-count" class="count"></p></div>
+<div class="filters"><div class="region-filters" role="group" aria-label="按地区筛选"><button data-region="all" aria-pressed="true">全部电台</button><button data-region="uk" aria-pressed="false">英国</button><button data-region="us" aria-pressed="false">美国</button><button data-region="europe" aria-pressed="false">欧洲</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索电台、城市或国家" aria-label="搜索电台、城市或国家"></label></div>
+<div id="stations"></div><div id="empty" hidden><h3>还没有找到这段旋律</h3><p>试试其他电台名、城市或国家。</p><button id="reset">查看全部电台</button></div>
+</section>
+<section id="listening-notes" class="notes"><span class="note-symbol" aria-hidden="true">♪</span><div><h2>关于这间小小的聆听室</h2><p>这里汇集电台官方直播流，节目与音乐版权归各电台及权利人所有。点击卡片即可收听；部分节目可能受所在地区、网络或电台政策限制。</p><p>直播不是点播，邂逅下一首，也是收听的乐趣。<a href="sources.html">查看直播源与核验记录 ↗</a></p></div></section>
+</main><footer><span>颂 · CLASSIC RADIO</span><span>把时间，交还给音乐。</span></footer>
+</div>
+<aside class="player" aria-label="当前播放"><div class="player-inner"><div class="player-mark" aria-hidden="true">♫</div><div class="player-info"><div class="player-kicker">NOW LISTENING <span id="live-badge" hidden>· LIVE</span></div><strong id="now-name">此刻，留一点空白</strong><div id="status" role="status" aria-live="polite">选择一座城市，开启一段旋律</div></div><button id="main-play" class="main-play" aria-label="请先选择电台" disabled>▶</button><label class="volume"><span aria-hidden="true">音量</span><input id="volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="音量"></label><span class="player-end">LIVE RADIO<br><small>随时，为你奏响</small></span></div></aside>
+<noscript><p class="noscript">请启用 JavaScript 以浏览电台与播放直播。</p></noscript>
+</body></html>
