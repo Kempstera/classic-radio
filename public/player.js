@@ -7,7 +7,7 @@ export class RadioPlayer {
   }
   emit(state,message='') {this.state=state;this.message=message;this.onChange({station:this.station,state,message});}
   dispose(){
-    this.generation++;clearTimeout(this.timer);
+    this.generation++;clearTimeout(this.timer);this.timer=null;
     if(this.audio){const old=this.audio;this.audio=null;old.pause();old.removeAttribute('src');old.load();}
     if(this.hls){this.hls.destroy();this.hls=null;}
   }
@@ -29,9 +29,9 @@ export class RadioPlayer {
       this.dispose();
       this.emit('error',error?.name==='NotAllowedError'?'浏览器暂停了自动播放，请再次点击播放。':'暂时无法播放，可能是版权地域限制。也可稍后重试或切换电台。');
     };
-    const armTimeout=()=>{clearTimeout(this.timer);this.timer=setTimeout(()=>fail(),this.timeout);};
+    const armTimeout=()=>{if(!this.timer)this.timer=setTimeout(()=>fail(),this.timeout);};
     const start=()=>{if(!current())return;try{Promise.resolve(audio.play()).catch(fail);}catch(error){fail(error);}};
-    audio.addEventListener('playing',()=>{if(current()){clearTimeout(this.timer);this.emit('playing',`${station.country} · ${station.city} · 正在直播`);}});
+    audio.addEventListener('playing',()=>{if(current()){clearTimeout(this.timer);this.timer=null;this.emit('playing',`${station.country} · ${station.city} · 正在直播`);}});
     const waiting=()=>{if(current()){this.emit('buffering','正在缓冲，请稍候…');armTimeout();}};
     audio.addEventListener('waiting',waiting);audio.addEventListener('stalled',waiting);
     audio.addEventListener('error',()=>fail());audio.addEventListener('ended',()=>fail());
