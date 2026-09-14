@@ -15,7 +15,8 @@ export const stations = [
     "type": "hls",
     "source": "https://www.bbc.co.uk/sounds/play/live/bbc_radio_three",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "沿用参考项目的 BBC 官方 CDN 地址，HLS 清单与跨域响应已验证。"
+    "verificationNote": "沿用参考项目的 BBC 官方 CDN 地址，HLS 清单与跨域响应已验证。",
+    "verificationNoteEn": "Uses the BBC's official CDN address from the reference project; HLS manifest and CORS response verified."
   },
   {
     "id": "classicfm",
@@ -32,7 +33,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.globalplayer.com/live/classicfm/uk/",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "从 Global Player 公开配置提取免费直播地址，收到 AAC 音频。"
+    "verificationNote": "从 Global Player 公开配置提取免费直播地址，收到 AAC 音频。",
+    "verificationNoteEn": "Free stream address extracted from Global Player's public configuration; AAC audio received."
   },
   {
     "id": "wqxr",
@@ -49,7 +51,8 @@ export const stations = [
     "type": "audio",
     "source": "https://wnyc.org/audio-other-formats",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方直链，收到 MP3 音频。"
+    "verificationNote": "官方直链，收到 MP3 音频。",
+    "verificationNoteEn": "Official direct link; MP3 audio received."
   },
   {
     "id": "wcrb",
@@ -66,7 +69,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.classicalwcrb.org/ways-to-listen",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官网播放器公开配置，收到 AAC 音频。"
+    "verificationNote": "官网播放器公开配置，收到 AAC 音频。",
+    "verificationNoteEn": "Taken from the official site player's public configuration; AAC audio received."
   },
   {
     "id": "wfmt",
@@ -83,7 +87,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.wfmt.com/how-to-listen/",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方收听页确认直播服务；公开目录发现供应商 MP3 地址并实测。"
+    "verificationNote": "官方收听页确认直播服务；公开目录发现供应商 MP3 地址并实测。",
+    "verificationNoteEn": "Live service confirmed on the official listening page; the provider's MP3 address was found in a public directory and tested."
   },
   {
     "id": "kusc",
@@ -100,7 +105,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.classicalcalifornia.org/articles/how-to-listen-to-classical-california",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官网公布 128.mp3.kusc.live 与 AAC PLS；现品牌为 Classical California。"
+    "verificationNote": "官网公布 128.mp3.kusc.live 与 AAC PLS；现品牌为 Classical California。",
+    "verificationNoteEn": "The official site publishes 128.mp3.kusc.live and an AAC PLS; now branded Classical California."
   },
   {
     "id": "mpr",
@@ -117,7 +123,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.yourclassical.org/story/2018/04/18/listen-to-yourclassical-streams-online-internet-radio",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "使用本地 MPR cms 流，而非全国 YourClassical Radio；收到 AAC 音频。"
+    "verificationNote": "使用本地 MPR cms 流，而非全国 YourClassical Radio；收到 AAC 音频。",
+    "verificationNoteEn": "Uses the local MPR CMS stream rather than the national YourClassical Radio; AAC audio received."
   },
   {
     "id": "allclassical",
@@ -134,7 +141,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.allclassical.org/contact/contact-our-technical-team/",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方直链，收到 MP3 音频。"
+    "verificationNote": "官方直链，收到 MP3 音频。",
+    "verificationNoteEn": "Official direct link; MP3 audio received."
   },
   {
     "id": "wwfm",
@@ -151,7 +159,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.wwfm.org/classical-music-stream",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方直链，收到 MP3 音频。"
+    "verificationNote": "官方直链，收到 MP3 音频。",
+    "verificationNoteEn": "Official direct link; MP3 audio received."
   },
   {
     "id": "rtve",
@@ -168,7 +177,8 @@ export const stations = [
     "type": "hls",
     "source": "https://www.rtve.es/play/radio/radio-clasica/",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "公开目录发现 RTVE 官方域名 HLS 地址，清单与跨域响应已验证。"
+    "verificationNote": "公开目录发现 RTVE 官方域名 HLS 地址，清单与跨域响应已验证。",
+    "verificationNoteEn": "An HLS address on RTVE's official domain was found in a public directory; manifest and CORS response verified."
   },
   {
     "id": "france",
@@ -185,7 +195,8 @@ export const stations = [
     "type": "hls",
     "source": "https://www.radiofrance.fr/francemusique",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官网与候选流多次连接超时，未验证成功，stream 留空。"
+    "verificationNote": "官网与候选流多次连接超时，未验证成功，stream 留空。",
+    "verificationNoteEn": "The official site and candidate streams timed out repeatedly, so verification did not succeed and the stream is left empty."
   },
   {
     "id": "br",
@@ -202,7 +213,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.br.de/unternehmen/inhalt/technik/nutzung-mp3-livestreams-100.html",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方技术文档公布的 256 kbps MP3 地址，收到音频。"
+    "verificationNote": "官方技术文档公布的 256 kbps MP3 地址，收到音频。",
+    "verificationNoteEn": "256 kbps MP3 address published in the official technical documentation; audio received."
   },
   {
     "id": "klassik",
@@ -219,7 +231,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.klassikradio.de/",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "公开目录发现电台自有域名直播地址，收到 MP3 音频。"
+    "verificationNote": "公开目录发现电台自有域名直播地址，收到 MP3 音频。",
+    "verificationNoteEn": "Live address on the station's own domain found in a public directory; MP3 audio received."
   },
   {
     "id": "oe1",
@@ -236,7 +249,8 @@ export const stations = [
     "type": "audio",
     "source": "https://oe1.orf.at/faq",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "公开目录发现 ORF / ORS 直播地址，收到标识为 Ö1 的 MP3 音频；含新闻与文化节目。"
+    "verificationNote": "公开目录发现 ORF / ORS 直播地址，收到标识为 Ö1 的 MP3 音频；含新闻与文化节目。",
+    "verificationNoteEn": "ORF / ORS live address found in a public directory; MP3 audio received and identified as Ö1; includes news and cultural programming."
   },
   {
     "id": "swiss",
@@ -253,7 +267,8 @@ export const stations = [
     "type": "audio",
     "source": "https://www.radioswissclassic.ch/de/empfang/internet",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方德语 128 kbps MP3 地址，收到音频。"
+    "verificationNote": "官方德语 128 kbps MP3 地址，收到音频。",
+    "verificationNoteEn": "Official German-language 128 kbps MP3 address; audio received."
   },
   {
     "id": "rai",
@@ -270,6 +285,7 @@ export const stations = [
     "type": "audio",
     "source": "https://www.raiplaysound.it/radio3",
     "verifiedAt": "2026-09-12",
-    "verificationNote": "官方 radio3.json 的 live.audio.url 指向 cont=162841；解析接口 Access Denied，未获得可验证直链。"
+    "verificationNote": "官方 radio3.json 的 live.audio.url 指向 cont=162841；解析接口 Access Denied，未获得可验证直链。",
+    "verificationNoteEn": "The official radio3.json live.audio.url points to cont=162841; the resolving endpoint returns Access Denied, so no verifiable direct link was obtained."
   }
 ];
